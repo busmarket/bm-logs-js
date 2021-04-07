@@ -16,12 +16,21 @@ Using JavaScript:
 
 ```js
 const BmLogs = require('@busmarket/bm-logs-js');
-const internalLogger = new BmLogs({filename: `log__${Date.now()}`});
 ```
 
 Using TypeScript:
 
 ```typescript
 import {BmLogs} from '@busmarket/bm-logs-js';
+```
+```js
 const internalLogger = new BmLogs({filename: `log__${Date.now()}`});
+internalLogger.log({
+    severity: 'error',
+    type: 'Service',
+    service: 'Name service',
+    result: 'Error',
+    message: `Error message`,
+    username: `Username`
+})
 ```
