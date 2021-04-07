@@ -22,6 +22,6 @@ const internalLogger = new BmLogs({filename: `log__${Date.now()}`});
 Using TypeScript:
 
 ```typescript
-import BmLogs = require("@busmarket/bm-logs-js");
+import {BmLogs} from 'bm-logs-js';
 const internalLogger = new BmLogs({filename: `log__${Date.now()}`});
 ```
