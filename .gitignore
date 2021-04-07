@@ -1,0 +1,8 @@
+.idea
+/.idea
+node_modules
+dist
+*.log
+*.lock
+example
+package-lock.json
