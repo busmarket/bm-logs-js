@@ -1,6 +1,6 @@
 {
   "name": "@busmarket/bm-logs-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Standard of journal for internal services",
   "types": "@types/bm-logs.d.ts",
   "main": "dist/index.js",
