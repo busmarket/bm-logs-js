@@ -11,7 +11,10 @@
     "watch-node": "nodemon lib/*",
     "tsc-declaration": "tsc --declaration"
   },
-  "repository": "http://github.com/busmarket/bm-logs-js",
+  "repository": {
+    "type": "git",
+    "url": "git+http://github.com/busmarket/bm-logs-js"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
