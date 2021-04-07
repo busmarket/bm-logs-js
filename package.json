@@ -1,6 +1,6 @@
 {
   "name": "@busmarket/bm-logs-js",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "Standard of journal for internal services",
   "types": "@types/bm-logs.d.ts",
   "main": "dist/index.js",
@@ -11,12 +11,9 @@
     "watch-node": "nodemon lib/*",
     "tsc-declaration": "tsc --declaration"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/busmarket/bmapi-js.git"
-  },
+  "repository": "http://github.com/busmarket/bm-logs-js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "bm",
