@@ -1,9 +1,11 @@
 {
   "name": "@busmarket/bm-logs-js",
-  "version": "1.0.9",
+  "version": "1.1.6",
   "description": "Standard of journal for internal services",
   "types": "@types/bm-logs.d.ts",
   "main": "dist/index.js",
+  "author": "Andrey Rymaruk <andrey.rymaruk@Busmarket.ua>",
+  "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rm -rf dist/* && tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc --removeComments",
@@ -13,18 +15,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+http://github.com/busmarket/bm-logs-js"
+    "url": "git+http://git@github.com/busmarket/bm-logs-js.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "bm",
     "bmlogs",
     "busmarket"
   ],
-  "author": "Andrey Rymaruk <andrey.rymaruk@Busmarket.ua>",
-  "license": "ISC",
   "devDependencies": {
     "@types/node": "^14.14.35",
     "@types/winston": "^2.4.4",
@@ -43,5 +43,6 @@
   "directories": {
     "example": "example",
     "lib": "lib"
-  }
+  },
+  "homepage": "https://github.com/busmarket/bm-logs-js#readme"
 }

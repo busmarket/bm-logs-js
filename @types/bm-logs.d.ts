@@ -1,4 +1,5 @@
 import {Logger} from "winston";
+import * as Transport from "winston-transport";
 
 /**
  * This type definition augments existing definition
@@ -24,5 +25,6 @@ export declare interface FieldsI {
 export declare class BmLogs {
     constructor(options?: {filename?: string})
     customLogger: Logger
+    private initializeTransports(options?: {filename?: string}): Transport[] | Transport
     log(params: FieldsI): void
 }

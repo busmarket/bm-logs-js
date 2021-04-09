@@ -2,16 +2,7 @@
 import {transports, createLogger, Logger} from 'winston';
 import moment from 'moment';
 import {FieldsI} from "../@types/bm-logs";
-
-/**
- * @name initialDefault
- * @description describe default values
- */
-const initialDefault: {
-    filename: string
-} = {
-    filename: 'logs'
-}
+import * as Transport from "winston-transport";
 
 /**
  * @name BmLogs
@@ -23,7 +14,7 @@ export class BmLogs {
      * @description initial file name
      * @private
      */
-    private readonly _filename: string = initialDefault.filename;
+    private readonly _filename: string | null = null;
 
     /**
      * @description initialize Logger instance
@@ -31,17 +22,31 @@ export class BmLogs {
     readonly customLogger: Logger;
 
     constructor(options?: {filename?: string}) {
-        if( options ) {
-            this._filename = options?.filename || initialDefault.filename;
+        this.customLogger = createLogger({
+            transports: this.initializeTransports(options)
+        });
+    }
+
+    /**
+     * @name initializeTransports
+     * @initialize transport interface
+     * @param {filename?: string} options
+     * @return Transport
+     * @private
+     */
+    private initializeTransports(options?: {filename?: string}): Transport[] | Transport {
+        // transport interface for console
+        const consoleTransport: Transport = new transports.Console();
+
+        // transport interface for writing in file
+        if( options && options?.filename) {
+            const fileTransport: Transport = new transports.File({
+                filename: `${options?.filename}.log`
+            });
+            return [ consoleTransport, fileTransport ]
         }
 
-        this.customLogger = createLogger({
-            transports: [
-                new transports.Console(),
-                new transports.File({ filename: `${this._filename}.log` }),
-            ]
-        });
-
+        return consoleTransport
     }
 
     /**

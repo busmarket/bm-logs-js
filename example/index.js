@@ -1,4 +1,4 @@
-const BmLogs = require('bm-logs-js').BmLogs;
+const BmLogs = require('../dist/index').BmLogs;
 
 const tracker = new BmLogs({filename: `log__${Date.now()}`});
 
@@ -7,6 +7,6 @@ tracker.log({
     type: 'Account',
     service: 'BmApiRequests',
     result: 'Error',
-    message: 'Some error',
+    message: 'Some error!!!',
     username: 'Login Username'
 })
